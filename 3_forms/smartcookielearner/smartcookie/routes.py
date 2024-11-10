@@ -1,4 +1,10 @@
 from flask import render_template, flash, redirect
+from smartcookie import app
+
+@app.route('/')
+@app.route('/index')
+def index():
+    return render_template('index.html', title='Home')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
